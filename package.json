@@ -1,0 +1,23 @@
+{
+  "name": "531-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andy-Smith1/531-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andy-Smith1/531-app/issues"
+  },
+  "homepage": "https://github.com/Andy-Smith1/531-app#readme",
+  "devDependencies": {
+    "jest": "^27.1.1"
+  }
+}

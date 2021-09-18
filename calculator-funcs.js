@@ -40,3 +40,5 @@ function calculateLifts(orm) {
 
   return lifts;
 }
+
+export { calculateOneRepMax, calculateTrainingMax, calculateLifts };

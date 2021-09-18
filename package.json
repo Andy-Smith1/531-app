@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,10 @@
   },
   "homepage": "https://github.com/Andy-Smith1/531-app#readme",
   "devDependencies": {
-    "jest": "^27.1.1"
+    "jest": "^27.1.1",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }

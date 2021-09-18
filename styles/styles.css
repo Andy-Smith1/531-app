@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/deadlift.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: Roboto, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 4rem;
+}
+/*# sourceMappingURL=styles.css.map */

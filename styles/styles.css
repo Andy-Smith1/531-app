@@ -15,11 +15,53 @@ body {
   width: 100vw;
   height: 100vh;
   font-family: Roboto, sans-serif;
+  overflow: hidden;
 }
 
 h1 {
   text-align: center;
+  color: #4acfff;
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: -10px;
+  margin-bottom: 0.5em;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1em;
+}
+
+.intro {
+  backdrop-filter: blur(6px) saturate(100%);
+  -webkit-backdrop-filter: blur(6px) saturate(100%);
+  background-color: rgba(75, 75, 75, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(143, 143, 143, 0.3);
   color: white;
-  font-size: 4rem;
+  max-width: 1000px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+}
+
+.intro p {
+  text-align: center;
+  padding: 2em;
+  max-width: 80ch;
+  margin: auto;
+  font-size: 1.25rem;
+}
+
+.intro a {
+  color: #4acfff;
+  text-decoration: none;
 }
 /*# sourceMappingURL=styles.css.map */

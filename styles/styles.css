@@ -16,15 +16,7 @@ body {
   height: 100vh;
   font-family: Roboto, sans-serif;
   overflow: hidden;
-}
-
-h1 {
-  text-align: center;
-  color: #4acfff;
-  font-size: 5rem;
-  font-weight: 900;
-  letter-spacing: -10px;
-  margin-bottom: 0.5em;
+  color: gainsboro;
 }
 
 .content {
@@ -36,6 +28,17 @@ h1 {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 1em;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  color: #4acfff;
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: -10px;
+  margin: 0;
 }
 
 .intro {
@@ -44,12 +47,21 @@ h1 {
   background-color: rgba(75, 75, 75, 0.4);
   border-radius: 12px;
   border: 1px solid rgba(143, 143, 143, 0.3);
-  color: white;
   max-width: 1000px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   margin: auto;
+  position: relative;
+  width: 100%;
+}
+
+.intro #intro-close {
+  position: absolute;
+  right: 1ch;
+  top: 1ch;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .intro p {
@@ -63,5 +75,58 @@ h1 {
 .intro a {
   color: #4acfff;
   text-decoration: none;
+}
+
+.orm-calculator {
+  backdrop-filter: blur(6px) saturate(100%);
+  -webkit-backdrop-filter: blur(6px) saturate(100%);
+  background-color: rgba(75, 75, 75, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(143, 143, 143, 0.3);
+  max-width: 1000px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 1em;
+}
+
+.orm-calculator h3 {
+  margin: 1rem;
+}
+
+.orm-calculator h4 {
+  margin: 1rem;
+}
+
+.orm-calculator div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1em;
+}
+
+.orm-calculator div label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0.5rem;
 }
 /*# sourceMappingURL=styles.css.map */

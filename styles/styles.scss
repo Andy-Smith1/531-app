@@ -1,6 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap");
 
 $light-blue: rgb(74, 207, 255);
+$off-white: rgb(220, 220, 220);
+@mixin glass {
+  backdrop-filter: blur(6px) saturate(100%);
+  -webkit-backdrop-filter: blur(6px) saturate(100%);
+  background-color: rgba(75, 75, 75, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(143, 143, 143, 0.3);
+  max-width: 1000px;
+  justify-content: center;
+  margin: auto;
+}
 
 * {
   box-sizing: border-box;
@@ -18,6 +29,16 @@ body {
   height: 100vh;
   font-family: Roboto, sans-serif;
   overflow: hidden;
+  color: $off-white;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  max-width: 800px;
+
+  margin: auto;
 }
 
 h1 {
@@ -26,25 +47,21 @@ h1 {
   font-size: 5rem;
   font-weight: 900;
   letter-spacing: -10px;
-  margin-bottom: 0.5em;
+  margin: 0;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
-}
 .intro {
-  backdrop-filter: blur(6px) saturate(100%);
-  -webkit-backdrop-filter: blur(6px) saturate(100%);
-  background-color: rgba(75, 75, 75, 0.4);
-  border-radius: 12px;
-  border: 1px solid rgba(143, 143, 143, 0.3);
-  color: white;
-  max-width: 1000px;
-  justify-content: center;
-  margin: auto;
+  @include glass;
+  position: relative;
+  width: 100%;
 
+  #intro-close {
+    position: absolute;
+    right: 1ch;
+    top: 1ch;
+    font-weight: bold;
+    cursor: pointer;
+  }
   p {
     text-align: center;
     padding: 2em;
@@ -55,5 +72,32 @@ h1 {
   a {
     color: $light-blue;
     text-decoration: none;
+  }
+}
+
+.orm-calculator {
+  @include glass;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 1em;
+
+  h3 {
+    margin: 1rem;
+  }
+  h4 {
+    margin: 1rem;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+    label {
+      display: flex;
+      flex-direction: column;
+      margin: 0.5rem;
+    }
   }
 }

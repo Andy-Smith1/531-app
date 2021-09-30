@@ -11,6 +11,7 @@
     <h1>5/3/1</h1>
     <div class="content">
       <div class="intro">
+        <div id="intro-close">X</div>
         <p>
           This app is designed for those running Jim Wendler's 5/3/1 programme.
           If you're unfamiliar with the programme, you can find out more
@@ -20,6 +21,49 @@
             >here</a
           >. Otherwise, enter your one rep maxes and get to work!
         </p>
+      </div>
+      <div class="orm-calculator">
+        <div>
+          <h3>ONE REP MAX CALCULATOR</h3>
+          <h4>ENTER YOUR BEST SET</h4>
+        </div>
+        <div>
+          <label>
+            WEIGHT
+            <input id="weight" type="number" />
+          </label>
+          <label>
+            REPS
+            <input id="reps" type="number" />
+          </label>
+        </div>
+      </div>
+
+      <div class="lifts-container">
+        <div class="lifts" id="squat">
+          <label>
+            SQUAT
+            <input type="text" />
+          </label>
+        </div>
+        <div class="lifts" id="bench">
+          <label>
+            BENCH
+            <input type="text" />
+          </label>
+        </div>
+        <div class="lifts" id="deadlift">
+          <label>
+            DEADLIFT
+            <input type="text" />
+          </label>
+        </div>
+        <div class="lifts" id="ohp">
+          <label>
+            OHP
+            <input type="text" />
+          </label>
+        </div>
       </div>
     </div>
     <script type="module" src="index.js"></script>

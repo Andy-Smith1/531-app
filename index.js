@@ -106,32 +106,32 @@ const weekButtons = document.querySelectorAll(".week-button");
 weekButtons[0].addEventListener("click", () => {
   currentWeek = 0;
   renderWeightPerSet(currentLift);
-  renderPercentages(65, 75, 85);
+  renderPercentages([5, 5, 5], 65, 75, 85);
 });
 
 weekButtons[1].addEventListener("click", () => {
   currentWeek = 1;
   renderWeightPerSet(currentLift);
-  renderPercentages(70, 80, 90);
+  renderPercentages([3, 3, 3], 70, 80, 90);
 });
 
 weekButtons[2].addEventListener("click", () => {
   currentWeek = 2;
   renderWeightPerSet(currentLift);
-  renderPercentages(75, 85, 95);
+  renderPercentages([5, 3, 1], 75, 85, 95);
 });
 
-function renderPercentages(set1, set2, set3) {
+function renderPercentages(reps, set1, set2, set3) {
   const setOne = document
     .querySelector("#set-one")
     .querySelector(".percentage");
-  setOne.textContent = `Set 1 - ${set1}% x 5`;
+  setOne.textContent = `Set 1 - ${set1}% x ${reps[0]}`;
   const setTwo = document
     .querySelector("#set-two")
     .querySelector(".percentage");
-  setTwo.textContent = `Set 2 - ${set2}% x 5`;
+  setTwo.textContent = `Set 2 - ${set2}% x ${reps[1]}`;
   const setThree = document
     .querySelector("#set-three")
     .querySelector(".percentage");
-  setThree.textContent = `Set 3 - ${set3}% x 5+`;
+  setThree.textContent = `Set 3 - ${set3}% x ${reps[2]}+`;
 }

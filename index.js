@@ -67,9 +67,8 @@ ohpInput.addEventListener("input", () => {
 
 const currentWeek = 0;
 
-const selectSquat = document.querySelector("#s");
-selectSquat.addEventListener("click", () => {
-  const liftNumbers = calculateLifts(maxSquat);
+function renderSetsAndReps(exercise) {
+  const liftNumbers = calculateLifts(exercise);
   const setOne = document.querySelector("#set-one").querySelector(".weight");
   setOne.textContent = `${liftNumbers[currentWeek][0]}KG`;
   const setTwo = document.querySelector("#set-two").querySelector(".weight");
@@ -78,4 +77,24 @@ selectSquat.addEventListener("click", () => {
     .querySelector("#set-three")
     .querySelector(".weight");
   setThree.textContent = `${liftNumbers[currentWeek][2]}KG`;
+}
+
+const selectSquat = document.querySelector("#s");
+selectSquat.addEventListener("click", () => {
+  renderSetsAndReps(maxSquat);
+});
+
+const selectBench = document.querySelector("#b");
+selectBench.addEventListener("click", () => {
+  renderSetsAndReps(maxBench);
+});
+
+const selectDeadlift = document.querySelector("#d");
+selectDeadlift.addEventListener("click", () => {
+  renderSetsAndReps(maxDeadlift);
+});
+
+const selectOHP = document.querySelector("#o");
+selectOHP.addEventListener("click", () => {
+  renderSetsAndReps(maxOHP);
 });

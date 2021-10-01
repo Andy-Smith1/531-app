@@ -21,21 +21,21 @@ function calculateLifts(orm) {
   };
 
   const lifts = [
-    {
-      "65%": round(trainingMax * 0.65),
-      "75%": round(trainingMax * 0.75),
-      "85%": round(trainingMax * 0.85),
-    },
-    {
-      "70%": round(trainingMax * 0.7),
-      "80%": round(trainingMax * 0.8),
-      "90%": round(trainingMax * 0.9),
-    },
-    {
-      "75%": round(trainingMax * 0.75),
-      "85%": round(trainingMax * 0.85),
-      "95%": round(trainingMax * 0.95),
-    },
+    [
+      round(trainingMax * 0.65),
+      round(trainingMax * 0.75),
+      round(trainingMax * 0.85),
+    ],
+    [
+      round(trainingMax * 0.7),
+      round(trainingMax * 0.8),
+      round(trainingMax * 0.9),
+    ],
+    [
+      round(trainingMax * 0.75),
+      round(trainingMax * 0.85),
+      round(trainingMax * 0.95),
+    ],
   ];
 
   return lifts;

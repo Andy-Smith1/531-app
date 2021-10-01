@@ -194,4 +194,42 @@ h1 {
   max-width: 100px;
   margin: auto;
 }
+
+.week-buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.week-buttons-container button {
+  margin: 1em;
+}
+
+.percentages-container {
+  backdrop-filter: blur(3px) saturate(100%);
+  -webkit-backdrop-filter: blur(6px) saturate(100%);
+  background-color: rgba(75, 75, 75, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(143, 143, 143, 0.3);
+  max-width: 1000px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  padding: 1em;
+  width: 100%;
+}
+
+.percentages-container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1em;
+}
 /*# sourceMappingURL=styles.css.map */

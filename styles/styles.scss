@@ -141,3 +141,24 @@ h1 {
     }
   }
 }
+
+.week-buttons-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+
+  button {
+    margin: 1em;
+  }
+}
+
+.percentages-container {
+  @include glass;
+  padding: 1em;
+  width: 100%;
+  div {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+  }
+}

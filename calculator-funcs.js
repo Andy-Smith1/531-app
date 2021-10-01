@@ -7,14 +7,12 @@ function calculateOneRepMax(weight, reps) {
 }
 
 function calculateTrainingMax(orm) {
-  if (!orm) return;
   const trainingMax = orm * 0.9;
   const roundedTM = 2.5 * Math.round(trainingMax / 2.5);
   return roundedTM;
 }
 
 function calculateLifts(orm) {
-  if (!orm) return;
   const trainingMax = calculateTrainingMax(orm);
   const round = (num) => {
     return 2.5 * Math.round(num / 2.5);

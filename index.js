@@ -14,8 +14,8 @@ closeIntro.addEventListener("click", () => {
 const weightInput = document.querySelector("#weight");
 const repsInput = document.querySelector("#reps");
 
-let maxWeight;
-let maxReps;
+let maxWeight = 0;
+let maxReps = 0;
 
 weightInput.addEventListener("input", () => {
   maxWeight = weightInput.value;
@@ -39,4 +39,43 @@ repsInput.addEventListener("input", () => {
     if (max === undefined) return;
     orm.textContent = `Your estimated 1RM is ${max}KG`;
   }
+});
+
+let maxSquat = 0;
+const squatInput = document.querySelector("#squat");
+squatInput.addEventListener("input", () => {
+  maxSquat = squatInput.value;
+});
+
+let maxBench = 0;
+const benchInput = document.querySelector("#bench");
+benchInput.addEventListener("input", () => {
+  maxBench = benchInput.value;
+});
+
+let maxDeadlift = 0;
+const deadliftInput = document.querySelector("#deadlift");
+deadliftInput.addEventListener("input", () => {
+  maxDeadlift = deadliftInput.value;
+});
+
+let maxOHP = 0;
+const ohpInput = document.querySelector("#ohp");
+ohpInput.addEventListener("input", () => {
+  maxOHP = ohpInput.value;
+});
+
+const currentWeek = 0;
+
+const selectSquat = document.querySelector("#s");
+selectSquat.addEventListener("click", () => {
+  const liftNumbers = calculateLifts(maxSquat);
+  const setOne = document.querySelector("#set-one").querySelector(".weight");
+  setOne.textContent = `${liftNumbers[currentWeek][0]}KG`;
+  const setTwo = document.querySelector("#set-two").querySelector(".weight");
+  setTwo.textContent = `${liftNumbers[currentWeek][1]}KG`;
+  const setThree = document
+    .querySelector("#set-three")
+    .querySelector(".weight");
+  setThree.textContent = `${liftNumbers[currentWeek][2]}KG`;
 });

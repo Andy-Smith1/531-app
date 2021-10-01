@@ -65,9 +65,11 @@ ohpInput.addEventListener("input", () => {
   maxOHP = ohpInput.value;
 });
 
-const currentWeek = 0;
+let currentWeek = 0;
+let currentLift;
 
-function renderSetsAndReps(exercise) {
+function renderWeightPerSet(exercise) {
+  currentLift = exercise;
   const liftNumbers = calculateLifts(exercise);
   const setOne = document.querySelector("#set-one").querySelector(".weight");
   setOne.textContent = `${liftNumbers[currentWeek][0]}KG`;
@@ -81,20 +83,55 @@ function renderSetsAndReps(exercise) {
 
 const selectSquat = document.querySelector("#s");
 selectSquat.addEventListener("click", () => {
-  renderSetsAndReps(maxSquat);
+  renderWeightPerSet(maxSquat);
 });
 
 const selectBench = document.querySelector("#b");
 selectBench.addEventListener("click", () => {
-  renderSetsAndReps(maxBench);
+  renderWeightPerSet(maxBench);
 });
 
 const selectDeadlift = document.querySelector("#d");
 selectDeadlift.addEventListener("click", () => {
-  renderSetsAndReps(maxDeadlift);
+  renderWeightPerSet(maxDeadlift);
 });
 
 const selectOHP = document.querySelector("#o");
 selectOHP.addEventListener("click", () => {
-  renderSetsAndReps(maxOHP);
+  renderWeightPerSet(maxOHP);
 });
+
+const weekButtons = document.querySelectorAll(".week-button");
+
+weekButtons[0].addEventListener("click", () => {
+  currentWeek = 0;
+  renderWeightPerSet(currentLift);
+  renderPercentages(65, 75, 85);
+});
+
+weekButtons[1].addEventListener("click", () => {
+  currentWeek = 1;
+  renderWeightPerSet(currentLift);
+  renderPercentages(70, 80, 90);
+});
+
+weekButtons[2].addEventListener("click", () => {
+  currentWeek = 2;
+  renderWeightPerSet(currentLift);
+  renderPercentages(75, 85, 95);
+});
+
+function renderPercentages(set1, set2, set3) {
+  const setOne = document
+    .querySelector("#set-one")
+    .querySelector(".percentage");
+  setOne.textContent = `Set 1 - ${set1}% x 5`;
+  const setTwo = document
+    .querySelector("#set-two")
+    .querySelector(".percentage");
+  setTwo.textContent = `Set 2 - ${set2}% x 5`;
+  const setThree = document
+    .querySelector("#set-three")
+    .querySelector(".percentage");
+  setThree.textContent = `Set 3 - ${set3}% x 5+`;
+}

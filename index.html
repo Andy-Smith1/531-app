@@ -25,11 +25,11 @@
       <div class="orm-calculator">
         <div>
           <h3>ONE REP MAX CALCULATOR</h3>
-          <h4>ENTER YOUR BEST SET</h4>
+          <h4>Enter your best set</h4>
         </div>
         <div>
           <label>
-            WEIGHT
+            WEIGHT(KG)
             <input id="weight" type="number" />
           </label>
           <label>
@@ -40,33 +40,54 @@
       </div>
 
       <div class="lifts-container">
-        <div class="lifts" id="squat">
+        <div class="lifts">
           <label>
             SQUAT
-            <input type="number" />
+            <input type="number" id="squat" />
           </label>
-          <button>SELECT</button>
+          <button id="s">SELECT</button>
         </div>
-        <div class="lifts" id="bench">
+        <div class="lifts">
           <label>
             BENCH
-            <input type="number" />
+            <input type="number" id="bench" />
           </label>
           <button>SELECT</button>
         </div>
-        <div class="lifts" id="deadlift">
+        <div class="lifts">
           <label>
             DEADLIFT
-            <input type="number" />
+            <input type="number" id="deadlift" />
           </label>
           <button>SELECT</button>
         </div>
-        <div class="lifts" id="ohp">
+        <div class="lifts">
           <label>
             OHP
-            <input type="number" />
+            <input type="number" id="ohp" />
           </label>
           <button>SELECT</button>
+        </div>
+      </div>
+
+      <div class="week-buttons-container">
+        <button class="week-button">WEEK 1</button>
+        <button class="week-button">WEEK 2</button>
+        <button class="week-button">WEEK 3</button>
+      </div>
+
+      <div class="percentages-container">
+        <div id="set-one">
+          <div class="percentage">Set 1 - 65% x 5</div>
+          <div class="weight">0.0KG</div>
+        </div>
+        <div id="set-two">
+          <div class="percentage">Set 2 - 75% x 5</div>
+          <div class="weight">0.0KG</div>
+        </div>
+        <div id="set-three">
+          <div class="percentage">Set 3 - 85% x 5+</div>
+          <div class="weight">0.0KG</div>
         </div>
       </div>
     </div>

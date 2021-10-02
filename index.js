@@ -1,4 +1,7 @@
-import { calculateOneRepMax, calculateLifts } from "./calculator-funcs.js";
+import {
+  calculateOneRepMax,
+  calculateLifts,
+} from "./functions/calculator-funcs.js";
 
 const closeIntro = document.querySelector("#intro-close");
 const intro = document.querySelector(".intro");
@@ -44,31 +47,36 @@ let maxSquat = 0;
 const squatInput = document.querySelector("#squat");
 squatInput.addEventListener("input", () => {
   maxSquat = squatInput.value;
+  localStorage.setItem("storedSquat", maxSquat);
 });
 
 let maxBench = 0;
 const benchInput = document.querySelector("#bench");
 benchInput.addEventListener("input", () => {
   maxBench = benchInput.value;
+  localStorage.setItem("storedBench", maxBench);
 });
 
 let maxDeadlift = 0;
 const deadliftInput = document.querySelector("#deadlift");
 deadliftInput.addEventListener("input", () => {
   maxDeadlift = deadliftInput.value;
+  localStorage.setItem("storedDeadlift", maxDeadlift);
 });
 
 let maxOHP = 0;
 const ohpInput = document.querySelector("#ohp");
 ohpInput.addEventListener("input", () => {
   maxOHP = ohpInput.value;
+  localStorage.setItem("storedOHP", maxOHP);
 });
 
 let currentWeek = 0;
-let currentLift;
+let currentLift = 0;
 
 function renderWeightPerSet(exercise) {
   currentLift = exercise;
+  localStorage.setItem("storedCurrentLift", currentLift);
   const liftNumbers = calculateLifts(exercise);
   const setOne = document.querySelector("#set-one").querySelector(".weight");
   setOne.textContent = `${liftNumbers[currentWeek][0]}KG`;
@@ -84,24 +92,28 @@ const selectSquat = document.querySelector("#s");
 selectSquat.addEventListener("click", () => {
   renderWeightPerSet(maxSquat);
   setActiveLiftClass(selectSquat);
+  localStorage.setItem("storedActiveLift", "#s");
 });
 
 const selectBench = document.querySelector("#b");
 selectBench.addEventListener("click", () => {
   renderWeightPerSet(maxBench);
   setActiveLiftClass(selectBench);
+  localStorage.setItem("storedActiveLift", "#b");
 });
 
 const selectDeadlift = document.querySelector("#d");
 selectDeadlift.addEventListener("click", () => {
   renderWeightPerSet(maxDeadlift);
   setActiveLiftClass(selectDeadlift);
+  localStorage.setItem("storedActiveLift", "#d");
 });
 
 const selectOHP = document.querySelector("#o");
 selectOHP.addEventListener("click", () => {
   renderWeightPerSet(maxOHP);
   setActiveLiftClass(selectOHP);
+  localStorage.setItem("storedActiveLift", "#o");
 });
 
 function renderPercentages(reps, set1, set2, set3) {
@@ -123,6 +135,7 @@ const weekButtons = document.querySelectorAll(".week-button");
 
 weekButtons[0].addEventListener("click", () => {
   currentWeek = 0;
+  localStorage.setItem("storedWeek", currentWeek);
   setActiveWeekClass(weekButtons[0]);
   if (currentLift) renderWeightPerSet(currentLift);
   renderPercentages([5, 5, 5], 65, 75, 85);
@@ -130,6 +143,7 @@ weekButtons[0].addEventListener("click", () => {
 
 weekButtons[1].addEventListener("click", () => {
   currentWeek = 1;
+  localStorage.setItem("storedWeek", currentWeek);
   setActiveWeekClass(weekButtons[1]);
   if (currentLift) renderWeightPerSet(currentLift);
   renderPercentages([3, 3, 3], 70, 80, 90);
@@ -137,6 +151,7 @@ weekButtons[1].addEventListener("click", () => {
 
 weekButtons[2].addEventListener("click", () => {
   currentWeek = 2;
+  localStorage.setItem("storedWeek", currentWeek);
   setActiveWeekClass(weekButtons[2]);
   if (currentLift) renderWeightPerSet(currentLift);
   renderPercentages([5, 3, 1], 75, 85, 95);
@@ -154,3 +169,56 @@ function setActiveLiftClass(lift) {
   const liftDiv = lift.parentNode;
   liftDiv.classList.add("active-lift");
 }
+
+console.log(localStorage);
+
+const {
+  storedBench,
+  storedDeadlift,
+  storedOHP,
+  storedSquat,
+  storedWeek,
+  storedCurrentLift,
+  storedActiveLift,
+} = localStorage;
+
+function loadLocalStorage() {
+  if (storedBench) {
+    benchInput.value = storedBench;
+    maxBench = storedBench;
+  }
+  if (storedDeadlift) {
+    deadliftInput.value = storedDeadlift;
+    maxDeadlift = storedDeadlift;
+  }
+  if (storedOHP) {
+    ohpInput.value = storedOHP;
+    maxOHP = storedOHP;
+  }
+  if (storedSquat) {
+    squatInput.value = storedSquat;
+    maxSquat = storedSquat;
+  }
+
+  if (storedWeek === "0") {
+    currentWeek = 0;
+    renderPercentages([5, 5, 5], 65, 75, 85);
+  } else if (storedWeek === "1") {
+    currentWeek = 1;
+    renderPercentages([3, 3, 3], 70, 80, 90);
+  } else if (storedWeek === "2") {
+    currentWeek = 2;
+    renderPercentages([5, 3, 1], 75, 85, 95);
+  }
+
+  if (storedCurrentLift) {
+    renderWeightPerSet(storedCurrentLift);
+  }
+  setActiveWeekClass(weekButtons[currentWeek]);
+  if (storedActiveLift) {
+    const activeLift = document.querySelector(storedActiveLift);
+    setActiveLiftClass(activeLift);
+  }
+}
+
+loadLocalStorage();

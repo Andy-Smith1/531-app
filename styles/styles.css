@@ -195,6 +195,10 @@ h1 {
   margin: auto;
 }
 
+.lifts-container .active-lift {
+  background-color: rgba(173, 216, 230, 0.345);
+}
+
 .week-buttons-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -206,6 +210,10 @@ h1 {
 
 .week-buttons-container button {
   margin: 1em;
+}
+
+.week-buttons-container .active-week {
+  background-color: lightblue;
 }
 
 .percentages-container {

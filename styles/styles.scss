@@ -28,7 +28,6 @@ body {
   width: 100vw;
   height: 100vh;
   font-family: Roboto, sans-serif;
-
   color: $off-white;
 }
 
@@ -140,6 +139,9 @@ h1 {
       margin: auto;
     }
   }
+  .active-lift {
+    background-color: rgba(173, 216, 230, 0.345);
+  }
 }
 
 .week-buttons-container {
@@ -149,6 +151,9 @@ h1 {
 
   button {
     margin: 1em;
+  }
+  .active-week {
+    background-color: lightblue;
   }
 }
 

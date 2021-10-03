@@ -3,6 +3,8 @@ import {
   calculateLifts,
 } from "./functions/calculator-funcs.js";
 
+import { fetchData, removeHtmlTags } from "./functions/fetch.js";
+
 const closeIntro = document.querySelector("#intro-close");
 const intro = document.querySelector(".intro");
 
@@ -218,5 +220,13 @@ function loadLocalStorage() {
     setActiveLiftClass(activeLift);
   }
 }
+
+const bodyParts = document.querySelector("#bodyparts");
+bodyParts.addEventListener("change", async (e) => {
+  const selectedMuscleIds = e.target.value.split(",");
+  const accessoryData = await fetchData(selectedMuscleIds);
+  const accessoryLifts = accessoryData.map((item) => item.lift);
+  console.log(accessoryLifts);
+});
 
 loadLocalStorage();

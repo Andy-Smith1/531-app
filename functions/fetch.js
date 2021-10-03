@@ -7,7 +7,7 @@
 //legs - 10, 8, 15
 //back - 12
 //chest - 4
-//abs
+//abs - 14, 16
 
 async function fetchData(...muscles) {
   const joinedMuscles = muscles.join(",");
@@ -15,10 +15,20 @@ async function fetchData(...muscles) {
     `https://wger.de/api/v2/exercise/?language=2&limit=100&muscles=${joinedMuscles}`
   );
   const parsedData = await data.json();
-  const exerciseArray = parsedData.results.map((exercise) => exercise.name);
-  const shuffledArray = exerciseArray.sort(() => 0.5 - Math.random());
-  console.log(shuffledArray.slice(0, 5));
-  return shuffledArray.slice(0, 5);
+  const exerciseArray = parsedData.results.map((exercise) => {
+    return { lift: exercise.name, description: exercise.description };
+  });
+  exerciseArray.forEach((exercise) => {
+    exercise.description = removeHtmlTags(exercise.description);
+  });
+  return exerciseArray;
 }
 
-export { fetchData };
+function removeHtmlTags(string) {
+  const regex = /<.{1,3}>/gi;
+  const withoutTags = string.replaceAll(regex, "");
+  const withoutNewLine = withoutTags.replaceAll(/\\n/g, "");
+  return withoutNewLine;
+}
+
+export { fetchData, removeHtmlTags };

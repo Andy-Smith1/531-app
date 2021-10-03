@@ -265,8 +265,15 @@ h1 {
       -ms-flex-pack: center;
           justify-content: center;
   margin: auto;
-  padding: 1em;
   width: 100%;
+  font-size: 1.5rem;
+  padding: 0 1em 0 1em;
+}
+
+@media (max-width: 700px) {
+  .percentages-container {
+    font-size: 1rem;
+  }
 }
 
 .percentages-container div {
@@ -276,6 +283,16 @@ h1 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1em;
+  margin: 1em 0 1em 0;
+}
+
+.percentages-container #set-one,
+.percentages-container #set-two,
+.percentages-container #set-three {
+  border-bottom: 2px solid #4acfff;
+}
+
+.percentages-container .weight {
+  font-weight: 900;
 }
 /*# sourceMappingURL=styles.css.map */

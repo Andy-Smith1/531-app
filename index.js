@@ -170,8 +170,6 @@ function setActiveLiftClass(lift) {
   liftDiv.classList.add("active-lift");
 }
 
-console.log(localStorage);
-
 const {
   storedBench,
   storedDeadlift,

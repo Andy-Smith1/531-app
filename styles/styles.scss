@@ -31,6 +31,28 @@ body {
   color: $off-white;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  outline: none;
+  border-style: none;
+  border-bottom: 2px solid $light-blue;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.262);
+  color: $off-white;
+  font-family: Roboto;
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: 900;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -87,6 +109,8 @@ h1 {
   }
 
   h3 {
+    font-weight: 900;
+    color: $light-blue;
     margin: 1rem;
   }
   h4 {
@@ -102,6 +126,7 @@ h1 {
       display: flex;
       flex-direction: column;
       margin: 0.5rem;
+      font-weight: 900;
 
       input {
         max-width: 100px;

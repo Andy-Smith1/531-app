@@ -38,6 +38,19 @@ input[type="number"] {
   font-size: 1.25rem;
   text-align: center;
   font-weight: 900;
+  margin: 1ch auto 1ch auto;
+}
+
+button {
+  font-family: Roboto;
+  font-weight: 900;
+  background: rgba(0, 0, 0, 0.262);
+  color: #4acfff;
+  padding: 1ch;
+  border: 1px solid #4acfff;
+  border-radius: 5px;
+  margin: 0.5em;
+  cursor: pointer;
 }
 
 .content {
@@ -166,7 +179,6 @@ h1 {
 
 .orm-calculator div label input {
   max-width: 100px;
-  margin: 1ch auto 1ch auto;
 }
 
 .lifts-container {
@@ -213,15 +225,15 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  color: gainsboro;
 }
 
 .lifts-container label input {
   max-width: 100px;
-  margin: auto;
 }
 
 .lifts-container .active-lift {
-  background-color: rgba(173, 216, 230, 0.345);
+  border: 2px solid #4acfff;
 }
 
 .week-buttons-container {
@@ -238,7 +250,8 @@ h1 {
 }
 
 .week-buttons-container .active-week {
-  background-color: lightblue;
+  background-color: #4acfff;
+  color: black;
 }
 
 .percentages-container {

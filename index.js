@@ -221,12 +221,43 @@ function loadLocalStorage() {
   }
 }
 
+////// ACCESSORIES/API SECTION
+
+let currentBodyPartExercises;
+
+//gets list of exercises from API for selected body part
 const bodyParts = document.querySelector("#bodyparts");
 bodyParts.addEventListener("change", async (e) => {
   const selectedMuscleIds = e.target.value.split(",");
   const accessoryData = await fetchData(selectedMuscleIds);
+  currentBodyPartExercises = accessoryData;
   const accessoryLifts = accessoryData.map((item) => item.lift);
-  console.log(accessoryLifts);
+  const uniqueAccessories = new Set(accessoryLifts);
+  const currentList = document.querySelectorAll(".accessory");
+  currentList.forEach((item) => item.remove());
+  addExercisesToList(uniqueAccessories);
+});
+
+function addExercisesToList(list) {
+  const exerciseList = document.getElementById("exercise-list");
+  list.forEach((item) => {
+    const newOption = document.createElement("option");
+    newOption.value = item;
+    newOption.textContent = item;
+    newOption.classList.add("accessory");
+    exerciseList.appendChild(newOption);
+  });
+}
+
+const accessoryDescription = document.querySelector("#accessory-description");
+const exerciseSelection = document.querySelector("#exercise-list");
+exerciseSelection.addEventListener("change", (e) => {
+  const accessory = e.target.value;
+  if (accessory === "default") return;
+  const matchedLift = currentBodyPartExercises.find(
+    (exercise) => exercise.lift === accessory
+  );
+  accessoryDescription.textContent = matchedLift.description;
 });
 
 loadLocalStorage();

@@ -233,7 +233,7 @@ h1 {
 }
 
 .lifts-container .active-lift {
-  border: 2px solid #4acfff;
+  background-color: rgba(74, 207, 255, 0.4);
 }
 
 .week-buttons-container {
@@ -268,6 +268,7 @@ h1 {
   width: 100%;
   font-size: 1.5rem;
   padding: 0 1em 0 1em;
+  text-align: center;
 }
 
 @media (max-width: 700px) {
@@ -289,10 +290,77 @@ h1 {
 .percentages-container #set-one,
 .percentages-container #set-two,
 .percentages-container #set-three {
-  border-bottom: 2px solid #4acfff;
+  border-bottom: 1px solid #4acfff;
 }
 
 .percentages-container .weight {
   font-weight: 900;
+}
+
+.accessories-container {
+  backdrop-filter: blur(3px) saturate(100%);
+  -webkit-backdrop-filter: blur(6px) saturate(100%);
+  background-color: rgba(75, 75, 75, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(143, 143, 143, 0.3);
+  max-width: 1000px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  margin: 1em 0 1em 0;
+  justify-content: center;
+  text-align: center;
+  padding: 1em;
+}
+
+.accessories-container h3 {
+  color: #4acfff;
+  font-size: 1.5rem;
+}
+
+.accessories-container h4 {
+  padding-bottom: 1.5em;
+}
+
+.accessories-container h4 span {
+  color: #4acfff;
+}
+
+.accessories-container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-bottom: 1em;
+}
+
+.accessories-container div select {
+  max-width: 150px;
+  margin: 1em auto 1em auto;
+  height: 30px;
+  text-align: center;
+  text-align-last: center;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #4acfff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.262);
+  color: white;
+  font-family: Roboto;
+}
+
+.accessories-container p {
+  max-width: 70ch;
+  margin: auto;
+  padding: 0 1em 1em 1em;
 }
 /*# sourceMappingURL=styles.css.map */

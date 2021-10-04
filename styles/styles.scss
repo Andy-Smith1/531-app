@@ -178,7 +178,7 @@ h1 {
     }
   }
   .active-lift {
-    border: 2px solid $light-blue;
+    background-color: rgba(74, 207, 255, 0.4);
   }
 }
 
@@ -201,6 +201,7 @@ h1 {
   width: 100%;
   font-size: 1.5rem;
   padding: 0 1em 0 1em;
+  text-align: center;
 
   @media (max-width: 700px) {
     font-size: 1rem;
@@ -215,9 +216,58 @@ h1 {
   #set-one,
   #set-two,
   #set-three {
-    border-bottom: 2px solid $light-blue;
+    border-bottom: 1px solid $light-blue;
   }
   .weight {
     font-weight: 900;
+  }
+}
+
+.accessories-container {
+  @include glass;
+  margin: 1em 0 1em 0;
+  justify-content: center;
+  text-align: center;
+  padding: 1em;
+
+  h3 {
+    color: $light-blue;
+    font-size: 1.5rem;
+  }
+  h4 {
+    padding-bottom: 1.5em;
+
+    span {
+      color: $light-blue;
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-bottom: 1em;
+
+    select {
+      max-width: 150px;
+      margin: 1em auto 1em auto;
+      height: 30px;
+      text-align: center;
+      text-align-last: center;
+      outline: none;
+      border: none;
+      border-bottom: 2px solid $light-blue;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      padding: 5px;
+      background: rgba(0, 0, 0, 0.262);
+      color: white;
+      font-family: Roboto;
+    }
+  }
+  p {
+    max-width: 70ch;
+    margin: auto;
+    padding: 0 1em 1em 1em;
   }
 }

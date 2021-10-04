@@ -43,28 +43,28 @@
         <div class="lifts">
           <label>
             SQUAT
-            <input type="number" id="squat" />
+            <input type="number" id="squat" placeholder="1RM" />
           </label>
           <button id="s">SELECT</button>
         </div>
         <div class="lifts">
           <label>
             BENCH PRESS
-            <input type="number" id="bench" />
+            <input type="number" id="bench" placeholder="1RM" />
           </label>
           <button id="b">SELECT</button>
         </div>
         <div class="lifts">
           <label>
             DEADLIFT
-            <input type="number" id="deadlift" />
+            <input type="number" id="deadlift" placeholder="1RM" />
           </label>
           <button id="d">SELECT</button>
         </div>
         <div class="lifts">
           <label>
             SHOULDER PRESS
-            <input type="number" id="ohp" />
+            <input type="number" id="ohp" placeholder="1RM" />
           </label>
           <button id="o">SELECT</button>
         </div>
@@ -96,6 +96,11 @@
       </div>
 
       <div class="accessories-container">
+        <h3>ACCESSORIES</h3>
+        <h4>
+          Use the menu's below for accessory movement ideas
+          <span>AFTER</span> completing the main sets
+        </h4>
         <div>
           <label for="bodyparts">Select body part</label>
           <select name="bodyparts" id="bodyparts">
@@ -114,6 +119,8 @@
             <option value="default">--Select--</option>
           </select>
         </div>
+        <br />
+        <p id="accessory-description"></p>
       </div>
     </div>
     <script type="module" src="index.js"></script>
